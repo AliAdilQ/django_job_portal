@@ -1,0 +1,1 @@
+Bootstrap 5.3.8 (MIT) and DM Sans (SIL Open Font License) are stored locally so the UI works without CDN access. Their license files are included here. Original sources are listed in `scripts/fetch_vendor.py`; custom SVG illustrations and icons are part of this project's MIT license.

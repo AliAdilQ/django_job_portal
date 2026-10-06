@@ -1,0 +1,1 @@
+<div class="status-chart" role="img" aria-label="Application counts by status">{% for item in status_statistics %}<div class="chart-row"><div><span>{{ item.label }}</span><strong>{{ item.count }}</strong></div><div class="chart-track"><span class="status-{{ item.key }}" style="width:{{ item.width }}%"></span></div></div>{% endfor %}</div>

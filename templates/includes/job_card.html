@@ -1,0 +1,9 @@
+{% load portal_tags %}
+<article class="job-card">
+  <div class="card-top"><a class="company-logo tone-{{ job.company.pk|divisibleby:2|yesno:'mint,lavender' }}" href="{% url 'core:company_detail' job.company.pk %}" aria-label="{{ job.company.name }}">{% if job.company.logo %}<img src="{{ job.company.logo.url }}" alt="{{ job.company.name }} logo">{% else %}{{ job.company.name|slice:':1' }}{% endif %}</a>{% if job.featured %}<span class="badge-soft badge-purple">{% include 'includes/icon.html' with name='star' %} Featured</span>{% else %}<span class="posted-label">{{ job.created_at|timesince }} ago</span>{% endif %}</div>
+  <p class="company-name">{{ job.company.name }}</p>
+  <h3><a href="{{ job.get_absolute_url }}">{{ job.title }}</a></h3>
+  <div class="job-location">{% include 'includes/icon.html' with name='pin' %} {{ job.location }}{% if job.remote %} · Remote{% endif %}</div>
+  <div class="job-tags"><span>{{ job.get_job_type_display }}</span><span>{{ job.get_experience_level_display }}</span></div>
+  <div class="card-bottom"><span><strong>{{ job.salary_min|money }} – {{ job.salary_max|money }}</strong><small>/ year</small></span><a class="circle-link" href="{{ job.get_absolute_url }}" aria-label="View {{ job.title }}">{% include 'includes/icon.html' with name='arrow-up' %}</a></div>
+</article>

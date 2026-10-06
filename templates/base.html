@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Find your next opportunity with Django Job Portal. Discover jobs, connect with companies, and build your career.">
+  <title>{% block title %}Django Job Portal{% endblock %} · Jobly</title>
+  <link rel="icon" href="{% static 'images/favicon.svg' %}" type="image/svg+xml">
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  {% include 'includes/navbar.html' %}
+  {% include 'includes/messages.html' %}
+  <main id="main-content">{% block content %}{% endblock %}</main>
+  {% block footer %}{% include 'includes/footer.html' %}{% endblock %}
+  <script src="{% static 'vendor/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>
